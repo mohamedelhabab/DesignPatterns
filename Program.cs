@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns.GangOfFour.Creational;
 using DesignPatterns.Models;
 using DesignPatterns.Specification_Pattern;
 using DesignPatterns.Specification_Pattern.Classes;
+using static System.Console;
 
 namespace DesignPatterns
 {
@@ -13,46 +15,80 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            Product apple = new Product("Apple", Color.Red, Size.Medium);
-            Product tree = new Product("Tree",Color.Green,Size.Large);
-            Product house = new Product("House", Color.Blue , Size.Large);
+            #region Open Closed Principle And Specification Pattern
+            //Product apple = new Product("Apple", Color.Red, Size.Medium);
+            //Product tree = new Product("Tree",Color.Green,Size.Large);
+            //Product house = new Product("House", Color.Blue , Size.Large);
 
-            Product[] products = {apple, tree, house};
+            //Product[] products = {apple, tree, house};
 
 
-            //old
-            //  ProductFilter pf = new ProductFilter();
+            ////old
+            ////  ProductFilter pf = new ProductFilter();
 
-            //  Console.WriteLine("Large Products (old):");
+            ////  Console.WriteLine("Large Products (old):");
 
-            //foreach (var p in pf.FilterBySize(products, Size.Large))
+            ////foreach (var p in pf.FilterBySize(products, Size.Large))
+            ////{
+            ////    Console.WriteLine(p.Name);
+            ////}
+            ////    Console.WriteLine("Green Products (old):");
+            ////new 
+
+            //IFilter<Product> filter = new SmartFilter();
+
+            //Console.WriteLine("Green Products (new):");
+            //foreach (var p in filter.Filter(products,new ColorSpecification(Color.Green)))
             //{
-            //    Console.WriteLine(p.Name);
+            //    Console.WriteLine($"{p.Name} is {p.Color}");
             //}
-            //    Console.WriteLine("Green Products (old):");
-            //new 
 
-            IFilter<Product> filter = new SmartFilter();
+            //Console.WriteLine("Large Products (new):");
+            //foreach (var p in filter.Filter(products, new SizeSpecification(Size.Large)))
+            //{
+            //    Console.WriteLine($"{p.Name} is {p.Size}");
+            //}
 
-            Console.WriteLine("Green Products (new):");
-            foreach (var p in filter.Filter(products,new ColorSpecification(Color.Green)))
+
+            ////color and size
+            //foreach (var p in filter.Filter(products,
+            //    new AndSpecification<Product>(new ColorSpecification(Color.Blue),new SizeSpecification(Size.Large) )))
+            //{
+            //    Console.WriteLine($"{p.Name} Size is {p.Size} And Color Is {p.Color}");
+            //} 
+            #endregion
+
+
+            //var hello = "Hello";
+
+            //var sp = new StringBuilder();
+
+            //sp.Append("<p>");
+            //sp.Append(hello);
+            //sp.Append("</p>");
+            //WriteLine(sp);
+
+            //sp.Clear();
+            //sp.Append("<ul>");
+            var words = new []{"Hello","World"};
+
+            //foreach (var item in words)
+            //{
+            //    sp.Append($"<li>{item}</li>");
+            //}
+            //sp.Append("<ul/>");
+
+            //WriteLine(sp);
+
+            HtmlBuilder htmlBuilder = new HtmlBuilder("ul", string.Empty);
+
+            foreach (var text in words)
             {
-                Console.WriteLine($"{p.Name} is {p.Color}");
-            }
+                htmlBuilder.AddChild("li", text);
 
-            Console.WriteLine("Large Products (new):");
-            foreach (var p in filter.Filter(products, new SizeSpecification(Size.Large)))
-            {
-                Console.WriteLine($"{p.Name} is {p.Size}");
             }
+            WriteLine(htmlBuilder);
 
-
-            //color and size
-            foreach (var p in filter.Filter(products,
-                new AndSpecification<Product>(new ColorSpecification(Color.Blue),new SizeSpecification(Size.Large) )))
-            {
-                Console.WriteLine($"{p.Name} Size is {p.Size} And Color Is {p.Color}");
-            }
             Console.Read();
         }
     }
