@@ -59,6 +59,10 @@ namespace DesignPatterns
             #endregion
 
 
+            var words = new[] { "Hello", "World" };
+
+            //Without Builder
+
             //var hello = "Hello";
 
             //var sp = new StringBuilder();
@@ -70,7 +74,6 @@ namespace DesignPatterns
 
             //sp.Clear();
             //sp.Append("<ul>");
-            var words = new []{"Hello","World"};
 
             //foreach (var item in words)
             //{
@@ -80,13 +83,21 @@ namespace DesignPatterns
 
             //WriteLine(sp);
 
+            //With Builder
+
             HtmlBuilder htmlBuilder = new HtmlBuilder("ul", string.Empty);
 
-            foreach (var text in words)
-            {
-                htmlBuilder.AddChild("li", text);
+            //Without Fluent Api (Builder)
+            //foreach (var text in words)
+            //{
+            //    htmlBuilder.AddChild("li", text);
 
-            }
+            //}
+
+            //With Fluent Api (Builder) (returning an instance of the method Class)
+
+            htmlBuilder.AddChild("li", "Hello").AddChild("li","World");
+
             WriteLine(htmlBuilder);
 
             Console.Read();
