@@ -115,14 +115,21 @@ namespace DesignPatterns
 
             // WriteLine(personBuilder.Called("Mohamed").WorksAsA("Software Developer"));
 
-            var person = Person
-                               .Instance
-                               .Called("Mohamed")
-                               .WorksAsA("Software Developer")
-                               .Build();
+            //var person = Person
+            //                   .Instance
+            //                   .Called("Mohamed")
+            //                   .WorksAsA("Software Developer")
+            //                   .Build();
+
+            CodeBuilder codeBuilder = new CodeBuilder("Person");
+
+            codeBuilder
+                .AddField("Name", "string")
+                .AddField("Age","int");
 
 
-            WriteLine(person);
+
+            WriteLine(codeBuilder);
             #endregion
 
             Console.Read();
