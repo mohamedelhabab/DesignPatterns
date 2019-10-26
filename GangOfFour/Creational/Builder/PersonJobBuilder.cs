@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.GangOfFour.Creational
+namespace DesignPatterns.GangOfFour.Creational.Builder
 {
-    public class Builder
+    class PersonJobBuilder
     {
-
     }
 }

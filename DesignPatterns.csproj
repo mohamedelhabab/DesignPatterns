@@ -43,10 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GangOfFour\Creational\Builder.cs" />
-    <Compile Include="GangOfFour\Creational\HtmlBuilder.cs" />
+    <Compile Include="GangOfFour\Creational\Builder\HtmlBuilder.cs" />
+    <Compile Include="GangOfFour\Creational\Builder\PersonInfoBuilder.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\HtmlElement.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Size.cs" />
     <Compile Include="Program.cs" />

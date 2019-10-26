@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DesignPatterns.GangOfFour.Creational;
+using DesignPatterns.GangOfFour.Creational.Builder;
 using DesignPatterns.Models;
+
 using DesignPatterns.Specification_Pattern;
 using DesignPatterns.Specification_Pattern.Classes;
 using static System.Console;
@@ -59,7 +61,8 @@ namespace DesignPatterns
             #endregion
 
 
-            var words = new[] { "Hello", "World" };
+            #region Builder and simple fluent api Pattern
+            // var words = new[] { "Hello", "World" };
 
             //Without Builder
 
@@ -85,7 +88,7 @@ namespace DesignPatterns
 
             //With Builder
 
-            HtmlBuilder htmlBuilder = new HtmlBuilder("ul", string.Empty);
+            // HtmlBuilder htmlBuilder = new HtmlBuilder("ul", string.Empty);
 
             //Without Fluent Api (Builder)
             //foreach (var text in words)
@@ -96,9 +99,18 @@ namespace DesignPatterns
 
             //With Fluent Api (Builder) (returning an instance of the method Class)
 
-            htmlBuilder.AddChild("li", "Hello").AddChild("li","World");
+            //htmlBuilder.AddChild("li", "Hello").AddChild("li","World");
 
-            WriteLine(htmlBuilder);
+            //WriteLine(htmlBuilder); 
+            #endregion
+
+            #region Fluent Builder Inhertiance With Recursive Generics
+
+            PersonInfoBuilder personBuilder = new PersonInfoBuilder();
+
+            WriteLine(personBuilder.Called("Mohamed Elhabbab"));
+
+            #endregion
 
             Console.Read();
         }
