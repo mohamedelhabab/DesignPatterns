@@ -106,10 +106,23 @@ namespace DesignPatterns
 
             #region Fluent Builder Inhertiance With Recursive Generics
 
-            PersonInfoBuilder personBuilder = new PersonInfoBuilder();
+            // PersonJobBuilder personBuilder = new PersonJobBuilder();
 
-            WriteLine(personBuilder.Called("Mohamed Elhabbab"));
+            //WorksAsA() doesn't exist because the instance returned from called method 
+            //is for the base class which doesn't know anything about child classes methods
 
+            //  WriteLine(personBuilder.Called("Mohamed Elhabbab").WorksAsA());
+
+            // WriteLine(personBuilder.Called("Mohamed").WorksAsA("Software Developer"));
+
+            var person = Person
+                               .Instance
+                               .Called("Mohamed")
+                               .WorksAsA("Software Developer")
+                               .Build();
+
+
+            WriteLine(person);
             #endregion
 
             Console.Read();

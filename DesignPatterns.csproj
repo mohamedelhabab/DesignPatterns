@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GangOfFour\Creational\Builder\HtmlBuilder.cs" />
+    <Compile Include="GangOfFour\Creational\Builder\PersonBuilder.cs" />
     <Compile Include="GangOfFour\Creational\Builder\PersonInfoBuilder.cs" />
+    <Compile Include="GangOfFour\Creational\Builder\PersonJobBuilder.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\HtmlElement.cs" />
     <Compile Include="Models\Person.cs" />

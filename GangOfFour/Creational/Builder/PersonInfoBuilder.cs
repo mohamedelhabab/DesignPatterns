@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.GangOfFour.Creational.Builder
 {
-    public class PersonInfoBuilder
+    public class PersonInfoBuilder<SELF> : PersonBuilder 
+                             where SELF  : PersonInfoBuilder<SELF>
     {
-        Person person = new Person();
-
-        public PersonInfoBuilder Called(string name)
+        public SELF Called(string name)
         {
             person.Name = name;
 
-            return this;
+            return (SELF) this;
         }
 
         public override string ToString()

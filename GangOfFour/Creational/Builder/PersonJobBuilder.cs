@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.GangOfFour.Creational.Builder
 {
-    class PersonJobBuilder
+    public class PersonJobBuilder<SELF> : PersonInfoBuilder<PersonJobBuilder<SELF>>
+                            where SELF  : PersonJobBuilder<SELF>
     {
+        public SELF WorksAsA(string job)
+        {
+            person.Job = job;
+            return (SELF)this;
+        }
     }
 }

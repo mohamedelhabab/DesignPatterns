@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignPatterns.GangOfFour.Creational.Builder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,12 @@ namespace DesignPatterns.Models
     {
         public string Name;
         public string Job;
+
+            public class Builder : PersonJobBuilder<Builder>
+            {
+            }
+
+        public static Builder Instance  => new Builder();
 
         public override string ToString()
         {
