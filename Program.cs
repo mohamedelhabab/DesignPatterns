@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DesignPatterns.GangOfFour.Creational;
+using DesignPatterns.GangOfFour.Creational.Builder;
 using DesignPatterns.Models;
+
 using DesignPatterns.Specification_Pattern;
 using DesignPatterns.Specification_Pattern.Classes;
 using static System.Console;
@@ -59,6 +61,11 @@ namespace DesignPatterns
             #endregion
 
 
+            #region Builder and simple fluent api Pattern
+            // var words = new[] { "Hello", "World" };
+
+            //Without Builder
+
             //var hello = "Hello";
 
             //var sp = new StringBuilder();
@@ -70,7 +77,6 @@ namespace DesignPatterns
 
             //sp.Clear();
             //sp.Append("<ul>");
-            var words = new []{"Hello","World"};
 
             //foreach (var item in words)
             //{
@@ -80,14 +86,51 @@ namespace DesignPatterns
 
             //WriteLine(sp);
 
-            HtmlBuilder htmlBuilder = new HtmlBuilder("ul", string.Empty);
+            //With Builder
 
-            foreach (var text in words)
-            {
-                htmlBuilder.AddChild("li", text);
+            // HtmlBuilder htmlBuilder = new HtmlBuilder("ul", string.Empty);
 
-            }
-            WriteLine(htmlBuilder);
+            //Without Fluent Api (Builder)
+            //foreach (var text in words)
+            //{
+            //    htmlBuilder.AddChild("li", text);
+
+            //}
+
+            //With Fluent Api (Builder) (returning an instance of the method Class)
+
+            //htmlBuilder.AddChild("li", "Hello").AddChild("li","World");
+
+            //WriteLine(htmlBuilder); 
+            #endregion
+
+            #region Fluent Builder Inhertiance With Recursive Generics
+
+            // PersonJobBuilder personBuilder = new PersonJobBuilder();
+
+            //WorksAsA() doesn't exist because the instance returned from called method 
+            //is for the base class which doesn't know anything about child classes methods
+
+            //  WriteLine(personBuilder.Called("Mohamed Elhabbab").WorksAsA());
+
+            // WriteLine(personBuilder.Called("Mohamed").WorksAsA("Software Developer"));
+
+            //var person = Person
+            //                   .Instance
+            //                   .Called("Mohamed")
+            //                   .WorksAsA("Software Developer")
+            //                   .Build();
+
+            CodeBuilder codeBuilder = new CodeBuilder("Person");
+
+            codeBuilder
+                .AddField("Name", "string")
+                .AddField("Age","int");
+
+
+
+            WriteLine(codeBuilder);
+            #endregion
 
             Console.Read();
         }
