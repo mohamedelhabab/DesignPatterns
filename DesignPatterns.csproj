@@ -44,11 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GangOfFour\Creational\Builder\CodeBuilder.cs" />
+    <Compile Include="GangOfFour\Creational\Builder\EmployeeAddressBuilder.cs" />
+    <Compile Include="GangOfFour\Creational\Builder\EmployeeBuilder.cs" />
+    <Compile Include="GangOfFour\Creational\Builder\EmployeeJobBuilder.cs" />
     <Compile Include="GangOfFour\Creational\Builder\HtmlBuilder.cs" />
     <Compile Include="GangOfFour\Creational\Builder\PersonBuilder.cs" />
     <Compile Include="GangOfFour\Creational\Builder\PersonInfoBuilder.cs" />
     <Compile Include="GangOfFour\Creational\Builder\PersonJobBuilder.cs" />
     <Compile Include="Models\Color.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HtmlElement.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />

@@ -121,17 +121,34 @@ namespace DesignPatterns
             //                   .WorksAsA("Software Developer")
             //                   .Build();
 
-            CodeBuilder codeBuilder = new CodeBuilder("Person");
+            //CodeBuilder codeBuilder = new CodeBuilder("Person");
 
-            codeBuilder
-                .AddField("Name", "string")
-                .AddField("Age","int");
+            //codeBuilder
+            //    .AddField("Name", "string")
+            //    .AddField("Age","int");
 
 
 
-            WriteLine(codeBuilder);
+            //WriteLine(codeBuilder);
             #endregion
 
+            #region Facated Builder For Employee
+
+            EmployeeBuilder empBuilder = new EmployeeBuilder();
+
+            Employee emp = empBuilder
+                .Address
+                .SetAddress("160 , 26 july St")
+                .SetCity("Giza")
+                .SetPostCode("12654")
+                .Employement
+                .WorksAt("ARPUPLUS")
+                .WorksAs("Software Developer")
+                .SetAnnualSalary(500000);
+
+            WriteLine(emp);
+                
+            #endregion
             Console.Read();
         }
     }
