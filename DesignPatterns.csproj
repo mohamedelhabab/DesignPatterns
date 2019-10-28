@@ -51,6 +51,7 @@
     <Compile Include="GangOfFour\Creational\Builder\PersonBuilder.cs" />
     <Compile Include="GangOfFour\Creational\Builder\PersonInfoBuilder.cs" />
     <Compile Include="GangOfFour\Creational\Builder\PersonJobBuilder.cs" />
+    <Compile Include="GangOfFour\Creational\Factory\Point.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HtmlElement.cs" />

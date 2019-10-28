@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DesignPatterns.GangOfFour.Creational;
 using DesignPatterns.GangOfFour.Creational.Builder;
+using DesignPatterns.GangOfFour.Creational.Factory;
 using DesignPatterns.Models;
 
 using DesignPatterns.Specification_Pattern;
@@ -134,21 +135,31 @@ namespace DesignPatterns
 
             #region Facated Builder For Employee
 
-            EmployeeBuilder empBuilder = new EmployeeBuilder();
+            //EmployeeBuilder empBuilder = new EmployeeBuilder();
 
-            Employee emp = empBuilder
-                .Address
-                .SetAddress("160 , 26 july St")
-                .SetCity("Giza")
-                .SetPostCode("12654")
-                .Employement
-                .WorksAt("ARPUPLUS")
-                .WorksAs("Software Developer")
-                .SetAnnualSalary(500000);
+            //Employee emp = empBuilder
+            //    .Address
+            //    .SetAddress("160 , 26 july St")
+            //    .SetCity("Giza")
+            //    .SetPostCode("12654")
+            //    .Employement
+            //    .WorksAt("ARPUPLUS")
+            //    .WorksAs("Software Developer")
+            //    .SetAnnualSalary(500000);
 
-            WriteLine(emp);
-                
+            //WriteLine(emp);
+
             #endregion
+
+            #region Factory
+
+            //1-Factory Method
+
+            Point p = Point.NewPolarPoint(1.0, Math.PI / 2);
+            WriteLine(p);
+
+            #endregion
+
             Console.Read();
         }
     }
