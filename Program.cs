@@ -155,7 +155,7 @@ namespace DesignPatterns
 
             //1-Factory Method
 
-            Point p = Point.NewPolarPoint(1.0, Math.PI / 2);
+            Point p = PointFactory.NewPolarPoint(1.0, Math.PI / 2);
             WriteLine(p);
 
             #endregion
