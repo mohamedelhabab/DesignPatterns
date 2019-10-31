@@ -155,9 +155,20 @@ namespace DesignPatterns
 
             //1-Factory Method
 
-            Point p = PointFactory.NewPolarPoint(1.0, Math.PI / 2);
-            WriteLine(p);
+            //Point p = PointFactory.NewPolarPoint(1.0, Math.PI / 2);
+            //WriteLine(p);
 
+
+            //Inner Factory
+
+            Shape square = Shape.Factory.MakeSquare();
+            WriteLine(square.shapeType);
+
+            Shape triangle = Shape.Factory.MakeTriangle(45);
+            WriteLine(triangle.shapeType);
+
+            Shape polygon = Shape.Factory.MakePolygon(6, 45);
+            WriteLine(polygon.shapeType);
             #endregion
 
             Console.Read();
