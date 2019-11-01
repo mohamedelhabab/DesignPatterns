@@ -17,13 +17,15 @@ namespace DesignPatterns.GangOfFour.Creational
             this.rootName = rootName;
             root.Name = rootName;
         }
-        public void AddChild(string childName , string childText)
+        public HtmlBuilder AddChild(string childName , string childText)
         {
             root.childElements.Add(new HtmlElement()
             {
                 Name = childName ,
                 Text = childText
             });
+
+            return this;
         }
 
         public void Clear()

@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DesignPatterns.GangOfFour.Creational;
+using DesignPatterns.GangOfFour.Creational.Builder;
+using DesignPatterns.GangOfFour.Creational.Factory;
 using DesignPatterns.Models;
+
 using DesignPatterns.Specification_Pattern;
 using DesignPatterns.Specification_Pattern.Classes;
 using static System.Console;
@@ -59,6 +62,11 @@ namespace DesignPatterns
             #endregion
 
 
+            #region Builder and simple fluent api Pattern
+            // var words = new[] { "Hello", "World" };
+
+            //Without Builder
+
             //var hello = "Hello";
 
             //var sp = new StringBuilder();
@@ -70,7 +78,6 @@ namespace DesignPatterns
 
             //sp.Clear();
             //sp.Append("<ul>");
-            var words = new []{"Hello","World"};
 
             //foreach (var item in words)
             //{
@@ -80,14 +87,89 @@ namespace DesignPatterns
 
             //WriteLine(sp);
 
-            HtmlBuilder htmlBuilder = new HtmlBuilder("ul", string.Empty);
+            //With Builder
 
-            foreach (var text in words)
-            {
-                htmlBuilder.AddChild("li", text);
+            // HtmlBuilder htmlBuilder = new HtmlBuilder("ul", string.Empty);
 
-            }
-            WriteLine(htmlBuilder);
+            //Without Fluent Api (Builder)
+            //foreach (var text in words)
+            //{
+            //    htmlBuilder.AddChild("li", text);
+
+            //}
+
+            //With Fluent Api (Builder) (returning an instance of the method Class)
+
+            //htmlBuilder.AddChild("li", "Hello").AddChild("li","World");
+
+            //WriteLine(htmlBuilder); 
+            #endregion
+
+            #region Fluent Builder Inhertiance With Recursive Generics
+
+            // PersonJobBuilder personBuilder = new PersonJobBuilder();
+
+            //WorksAsA() doesn't exist because the instance returned from called method 
+            //is for the base class which doesn't know anything about child classes methods
+
+            //  WriteLine(personBuilder.Called("Mohamed Elhabbab").WorksAsA());
+
+            // WriteLine(personBuilder.Called("Mohamed").WorksAsA("Software Developer"));
+
+            //var person = Person
+            //                   .Instance
+            //                   .Called("Mohamed")
+            //                   .WorksAsA("Software Developer")
+            //                   .Build();
+
+            //CodeBuilder codeBuilder = new CodeBuilder("Person");
+
+            //codeBuilder
+            //    .AddField("Name", "string")
+            //    .AddField("Age","int");
+
+
+
+            //WriteLine(codeBuilder);
+            #endregion
+
+            #region Facated Builder For Employee
+
+            //EmployeeBuilder empBuilder = new EmployeeBuilder();
+
+            //Employee emp = empBuilder
+            //    .Address
+            //    .SetAddress("160 , 26 july St")
+            //    .SetCity("Giza")
+            //    .SetPostCode("12654")
+            //    .Employement
+            //    .WorksAt("ARPUPLUS")
+            //    .WorksAs("Software Developer")
+            //    .SetAnnualSalary(500000);
+
+            //WriteLine(emp);
+
+            #endregion
+
+            #region Factory
+
+            //1-Factory Method
+
+            //Point p = PointFactory.NewPolarPoint(1.0, Math.PI / 2);
+            //WriteLine(p);
+
+
+            //Inner Factory
+
+            Shape square = Shape.Factory.MakeSquare();
+            WriteLine(square.shapeType);
+
+            Shape triangle = Shape.Factory.MakeTriangle(45);
+            WriteLine(triangle.shapeType);
+
+            Shape polygon = Shape.Factory.MakePolygon(6, 45);
+            WriteLine(polygon.shapeType);
+            #endregion
 
             Console.Read();
         }
