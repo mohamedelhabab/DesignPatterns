@@ -184,11 +184,13 @@ namespace DesignPatterns
             //3:- Build HotDrinkMachineClass To Store The Mapping Between Drinks And Its Factories
             //Using The Reflection Then Return The Right DrinkFactory To Be Used .
 
-            HotDrinkMachine hotDrinkMachine = new HotDrinkMachine();
-            IHotDrink coffee = hotDrinkMachine.MakeDrink(AvailableDrinks.Coffee, 250);
+            //HotDrinkMachine hotDrinkMachine = new HotDrinkMachine();
+            //IHotDrink coffee = hotDrinkMachine.MakeDrink(AvailableDrinks.Coffee, 250);
 
-            coffee.Consume();
+            //coffee.Consume();
 
+            HotDrinkMachine_OCP hotDrinkMachine = new HotDrinkMachine_OCP();
+            IHotDrink coffee = hotDrinkMachine.MakeDrink();
             #endregion
 
             Console.Read();

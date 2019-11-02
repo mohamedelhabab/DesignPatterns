@@ -54,6 +54,7 @@
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Classes\Coffee.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Classes\CoffeeFactory.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Classes\HotDrinkMachine.cs" />
+    <Compile Include="GangOfFour\Creational\Factory\Abstract\Classes\HotDrinkMachine_OCP.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Classes\Tea.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Interfaces\IHotDrink.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Interfaces\IHotDrinkFactory.cs" />
