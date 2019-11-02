@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DesignPatterns.GangOfFour.Creational;
 using DesignPatterns.GangOfFour.Creational.Builder;
 using DesignPatterns.GangOfFour.Creational.Factory;
+using DesignPatterns.GangOfFour.Creational.Factory.Abstract.Classes;
+using DesignPatterns.GangOfFour.Creational.Factory.Abstract.Interfaces;
 using DesignPatterns.Models;
 
 using DesignPatterns.Specification_Pattern;
@@ -16,8 +18,10 @@ namespace DesignPatterns
 {
     class Program
     {
+        //Please UnComment Each Code Block To Test A Particular Pattern !
         static void Main(string[] args)
         {
+
             #region Open Closed Principle And Specification Pattern
             //Product apple = new Product("Apple", Color.Red, Size.Medium);
             //Product tree = new Product("Tree",Color.Green,Size.Large);
@@ -161,14 +165,32 @@ namespace DesignPatterns
 
             //Inner Factory
 
-            Shape square = Shape.Factory.MakeSquare();
-            WriteLine(square.shapeType);
+            //Shape square = Shape.Factory.MakeSquare();
+            //WriteLine(square.shapeType);
 
-            Shape triangle = Shape.Factory.MakeTriangle(45);
-            WriteLine(triangle.shapeType);
+            //Shape triangle = Shape.Factory.MakeTriangle(45);
+            //WriteLine(triangle.shapeType);
 
-            Shape polygon = Shape.Factory.MakePolygon(6, 45);
-            WriteLine(polygon.shapeType);
+            //Shape polygon = Shape.Factory.MakePolygon(6, 45);
+            //WriteLine(polygon.shapeType);
+
+            //Abstract Factory
+
+            //Steps :-
+            //1:- Build IHotDrink Interface And Implement It Using Available Drinks
+
+            //2:- Build IHotDrinkFactory Interface And Implement It Using Drinks Factories
+
+            //3:- Build HotDrinkMachineClass To Store The Mapping Between Drinks And Its Factories
+            //Using The Reflection Then Return The Right DrinkFactory To Be Used .
+
+            //HotDrinkMachine hotDrinkMachine = new HotDrinkMachine();
+            //IHotDrink coffee = hotDrinkMachine.MakeDrink(AvailableDrinks.Coffee, 250);
+
+            //coffee.Consume();
+
+            HotDrinkMachine_OCP hotDrinkMachine = new HotDrinkMachine_OCP();
+            IHotDrink coffee = hotDrinkMachine.MakeDrink();
             #endregion
 
             Console.Read();
