@@ -13,6 +13,7 @@ using DesignPatterns.Models;
 using DesignPatterns.Specification_Pattern;
 using DesignPatterns.Specification_Pattern.Classes;
 using static System.Console;
+using Person = DesignPatterns.GangOfFour.Creational.Factory.Person;
 
 namespace DesignPatterns
 {
@@ -189,8 +190,18 @@ namespace DesignPatterns
 
             //coffee.Consume();
 
-            HotDrinkMachine_OCP hotDrinkMachine = new HotDrinkMachine_OCP();
-            IHotDrink coffee = hotDrinkMachine.MakeDrink();
+            //HotDrinkMachine_OCP hotDrinkMachine = new HotDrinkMachine_OCP();
+            //IHotDrink coffee = hotDrinkMachine.MakeDrink();
+
+            PersonFactory personFactory = new PersonFactory();
+
+            Person person = personFactory.CreatePerson("Mohamed");
+
+            Console.WriteLine($"Person Id: {person.Id} , Name: {person.Name}");
+
+            Person person2 = personFactory.CreatePerson("Ahmed");
+
+            Console.WriteLine($"Person2 Id: {person2.Id} , Name: {person2.Name}");
             #endregion
 
             Console.Read();

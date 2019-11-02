@@ -59,6 +59,7 @@
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Interfaces\IHotDrink.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Interfaces\IHotDrinkFactory.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Abstract\Classes\TeaFactory.cs" />
+    <Compile Include="GangOfFour\Creational\Factory\FactoryCodingExercise.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Point.cs" />
     <Compile Include="GangOfFour\Creational\Factory\PointFactory.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Shape.cs" />
