@@ -161,15 +161,24 @@ namespace DesignPatterns
 
             //Inner Factory
 
-            Shape square = Shape.Factory.MakeSquare();
-            WriteLine(square.shapeType);
+            //Shape square = Shape.Factory.MakeSquare();
+            //WriteLine(square.shapeType);
 
-            Shape triangle = Shape.Factory.MakeTriangle(45);
-            WriteLine(triangle.shapeType);
+            //Shape triangle = Shape.Factory.MakeTriangle(45);
+            //WriteLine(triangle.shapeType);
 
-            Shape polygon = Shape.Factory.MakePolygon(6, 45);
-            WriteLine(polygon.shapeType);
+            //Shape polygon = Shape.Factory.MakePolygon(6, 45);
+            //WriteLine(polygon.shapeType);
             #endregion
+
+            Customer customer1 = new Customer("Mohamed",new Address("160", "35744", "Cairo"));
+
+            Customer customer2 = (Customer)customer1.DeepCopy();
+            customer2.Name = "Ali";
+            customer2.address.City = "Alexandria";
+
+            Console.WriteLine(customer1);
+            Console.WriteLine(customer2);
 
             Console.Read();
         }
