@@ -17,6 +17,15 @@ namespace DesignPatterns.Models
             Name = name;
             this.address = address; 
         }
+        
+        //Copy Constructor
+        public Customer(Customer otherCustomer)
+        {
+            Name = otherCustomer.Name;
+            address = new Address(otherCustomer.address.StreetAddress, 
+                otherCustomer.address.PostCode,
+                otherCustomer.address.City);
+        }
 
         public override string ToString()
         {
@@ -25,7 +34,7 @@ namespace DesignPatterns.Models
 
         public object Clone()
         {
-            throw new NotImplementedException();
+            return MemberwiseClone();
         }
 
         public Customer ShallowCopy()
