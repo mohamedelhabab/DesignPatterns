@@ -7,12 +7,17 @@ using DesignPatterns.GangOfFour.Creational.ProtoType;
 
 namespace DesignPatterns.Models
 {
+    [Serializable]
     public class Customer : IProtoType<Customer>
     {
         public string Name;
 
         public Address address;
 
+        public Customer()
+        {
+            
+        }
         public Customer(string name, Address address)
         {
             Name = name;

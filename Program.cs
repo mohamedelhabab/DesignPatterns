@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 using DesignPatterns.GangOfFour.Creational;
 using DesignPatterns.GangOfFour.Creational.Builder;
 using DesignPatterns.GangOfFour.Creational.Factory;
+using DesignPatterns.GangOfFour.Creational.ProtoType;
+using static DesignPatterns.GangOfFour.Creational.ProtoType.ProtoTypeCodingExercise;
+
+using DesignPatterns.HelperClasses;
 using DesignPatterns.Models;
 
 using DesignPatterns.Specification_Pattern;
 using DesignPatterns.Specification_Pattern.Classes;
 using static System.Console;
+using Point = DesignPatterns.GangOfFour.Creational.ProtoType.ProtoTypeCodingExercise.Point;
 
 namespace DesignPatterns
 {
@@ -171,18 +176,30 @@ namespace DesignPatterns
             //WriteLine(polygon.shapeType);
             #endregion
 
-            Customer customer1 = new Customer("Mohamed",new Address("160", "35744", "Cairo"));
+         //   Customer customer1 = new Customer("Mohamed",new Address("160", "35744", "Cairo"));
 
-            Customer customer2 = (Customer)customer1.DeepCopy();
+        //  Customer customer2 = customer1.DeepCopyByBinaryFormatter();
+         //   Customer customer2 = customer1.DeepCopyByXmlFormatter();
 
            //Customer customer2 = new Customer(customer1);
 
-            customer2.Name = "Ali";
-            customer2.address.City = "Alexandria";
+            //customer2.Name = "Ali";
+            //customer2.address.City = "Alexandria";
 
-            WriteLine(customer1);
-            WriteLine(customer2);
+            //WriteLine(customer1);
+            //WriteLine(customer2);
+            
+            Point start =new Point(){X = 2 ,Y =5};
+            Point end = new Point() { X = 3, Y = 7 };
 
+            Line line1 = new Line(){Start = start , End = end};
+
+            Line line2 = line1.DeepCopy();
+            line2.Start.X = 10;
+            line2.Start.Y = 10;
+
+            WriteLine(line1);
+            WriteLine(line2);
             Read();
         }
     }

@@ -7,12 +7,17 @@ using DesignPatterns.GangOfFour.Creational.ProtoType;
 
 namespace DesignPatterns.Models
 {
+    [Serializable]
     public class Address : IProtoType<Address>
     {
         public string StreetAddress;
         public string PostCode;
         public string City;
 
+        public Address()
+        {
+                
+        }
         public Address(string streetAddress, string postCode, string city)
         {
             StreetAddress = streetAddress;
