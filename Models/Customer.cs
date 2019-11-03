@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns.GangOfFour.Creational.ProtoType;
 
 namespace DesignPatterns.Models
 {
-    public class Customer : ICloneable
+    public class Customer : IProtoType<Customer>
     {
         public string Name;
 
@@ -44,7 +45,7 @@ namespace DesignPatterns.Models
 
         public Customer DeepCopy()
         {
-           return new Customer(Name, new Address(address.StreetAddress, address.PostCode, address.City));
+            return new Customer(Name, address.DeepCopy());
         }
     }
 }

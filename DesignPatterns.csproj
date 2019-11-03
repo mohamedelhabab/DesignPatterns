@@ -54,6 +54,7 @@
     <Compile Include="GangOfFour\Creational\Factory\Point.cs" />
     <Compile Include="GangOfFour\Creational\Factory\PointFactory.cs" />
     <Compile Include="GangOfFour\Creational\Factory\Shape.cs" />
+    <Compile Include="GangOfFour\Creational\ProtoType\IProtoType.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\Customer.cs" />

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns.GangOfFour.Creational.ProtoType;
 
 namespace DesignPatterns.Models
 {
-    public class Address
+    public class Address : IProtoType<Address>
     {
         public string StreetAddress;
         public string PostCode;
@@ -22,6 +23,11 @@ namespace DesignPatterns.Models
         public override string ToString()
         {
             return $"{nameof(StreetAddress)}: {StreetAddress}, {nameof(PostCode)}: {PostCode}, {nameof(City)}: {City}";
+        }
+
+        public Address DeepCopy()
+        {
+            return new Address(StreetAddress,PostCode,City);
         }
     }
 }

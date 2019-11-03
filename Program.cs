@@ -173,16 +173,17 @@ namespace DesignPatterns
 
             Customer customer1 = new Customer("Mohamed",new Address("160", "35744", "Cairo"));
 
-           // Customer customer2 = (Customer)customer1.DeepCopy();
+            Customer customer2 = (Customer)customer1.DeepCopy();
 
-           Customer customer2 = new Customer(customer1);
+           //Customer customer2 = new Customer(customer1);
+
             customer2.Name = "Ali";
             customer2.address.City = "Alexandria";
 
-            Console.WriteLine(customer1);
-            Console.WriteLine(customer2);
+            WriteLine(customer1);
+            WriteLine(customer2);
 
-            Console.Read();
+            Read();
         }
     }
 }
